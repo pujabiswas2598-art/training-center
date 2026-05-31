@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DigiSkills Academy | Complete Computer Mastery</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f7fe; overflow-x: hidden; }
+
+    .scroll-hidden { opacity: 0; transform: translateY(40px); transition: all 0.6s ease-out; }
+    .scroll-visible { opacity: 1; transform: translateY(0); }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 18px 50px; background: #0b1120; color: white; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .logo { font-size: 26px; font-weight: bold; background: linear-gradient(135deg, #f97316, #ec489a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    nav a { color: #cbd5e6; margin-left: 32px; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: #f97316; }
+
+    .hero { text-align: center; padding: 90px 20px 100px; background: linear-gradient(135deg, #0b1120 0%, #111827 100%); color: white; }
+    .hero img { max-width: 90%; border-radius: 28px; box-shadow: 0 25px 40px rgba(0,0,0,0.4); margin-bottom: 30px; }
+    .hero h1 { font-size: 52px; margin: 20px 0 15px; min-height: 80px; }
+    .cursor { display: inline-block; width: 3px; background: #f97316; margin-left: 5px; animation: blink 0.8s infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hero p { font-size: 22px; opacity: 0.9; margin-bottom: 10px; }
+    .btn { background: linear-gradient(95deg, #f97316, #ec489a); color: white; padding: 14px 42px; border: none; border-radius: 60px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; box-shadow: 0 6px 14px rgba(249,115,22,0.3); }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(236,72,153,0.5); }
+
+    .stats { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; background: #ffffff; padding: 50px 20px; border-radius: 60px 60px 30px 30px; margin: -40px 30px 0; box-shadow: 0 20px 35px rgba(0,0,0,0.05); }
+    .stat-item { text-align: center; }
+    .stat-number { font-size: 40px; font-weight: 800; background: linear-gradient(135deg, #f97316, #ec489a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat-label { font-size: 18px; color: #334155; margin-top: 6px; }
+
+    .courses { padding: 70px 20px; text-align: center; background: #f5f7fe; }
+    .courses h2 { font-size: 42px; margin-bottom: 50px; color: #0b1120; }
+    .card-container { display: flex; flex-wrap: wrap; gap: 35px; justify-content: center; max-width: 1300px; margin: auto; }
+    .card { background: white; border-radius: 28px; padding: 28px; width: 300px; transition: all 0.3s ease; text-align: left; box-shadow: 0 12px 25px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05); }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 25px 35px -12px rgba(249,115,22,0.3), 0 0 0 2px rgba(249,115,22,0.2); }
+    .card h3 { font-size: 26px; margin-bottom: 12px; color: #0b1120; }
+    .duration { color: #ec489a; font-weight: 600; margin: 10px 0 5px; }
+    .fee { font-size: 28px; font-weight: 800; color: #0b1120; margin: 8px 0; }
+    .coding-badge { display: inline-block; background: #f97316; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-top: 10px; }
+    .desc { color: #4b5563; line-height: 1.5; margin-top: 10px; }
+
+    footer { background: #0b1120; color: #94a3b8; text-align: center; padding: 45px 20px; margin-top: 20px; }
+    footer a { color: #f97316; text-decoration: none; margin: 0 14px; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 700px) {
+      header { flex-direction: column; gap: 15px; padding: 15px; }
+      nav a { margin: 0 15px; }
+      .hero h1 { font-size: 32px; }
+      .stats { margin: -20px 15px 0; gap: 25px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">⚡ DigiSkills Academy</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Computer Mastery Training">
+  <h1 id="typewriter"></h1>
+  <p>Complete computer & coding mastery — from zero to hero</p>
+  <button class="btn" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+    🚀 Enroll Now
+  </button>
+</section>
+
+<div class="stats">
+  <div class="stat-item"><div class="stat-number" id="stat1">0</div><div class="stat-label">Happy Students</div></div>
+  <div class="stat-item"><div class="stat-number" id="stat2">0</div><div class="stat-label">Expert Courses</div></div>
+  <div class="stat-item"><div class="stat-number" id="stat3">0</div><div class="stat-label">Job Placements</div></div>
+</div>
+
+<section id="courses" class="courses">
+  <h2>📚 Our Complete Mastery Courses</h2>
+  <div class="card-container">
+    <div class="card scroll-hidden">
+      <h3>🟢 Beginner Course</h3>
+      <p class="duration">⏱️ Duration: 6 weeks</p>
+      <p class="fee">$50</p>
+      <div class="coding-badge">✓ Includes Basic Coding (HTML/CSS)</div>
+      <p class="desc">Computer basics, internet, MS Office, digital skills + HTML/CSS fundamentals.</p>
+    </div>
+    <div class="card scroll-hidden">
+      <h3>🟠 Intermediate Course</h3>
+      <p class="duration">⏱️ Duration: 8 weeks</p>
+      <p class="fee">$80</p>
+      <div class="coding-badge">✓ Includes Coding (HTML/CSS + JS basics)</div>
+      <p class="desc">Everything from Beginner + advanced digital tools, JavaScript basics.</p>
+    </div>
+    <div class="card scroll-hidden">
+      <h3>🔴 Advanced Course</h3>
+      <p class="duration">⏱️ Duration: 10 weeks</p>
+      <p class="fee">$120</p>
+      <div class="coding-badge">✓ Full Coding (HTML/CSS + JS + Python)</div>
+      <p class="desc">Complete package: all skills + advanced coding, projects & freelancing prep.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>© 2026 DigiSkills Academy — From Zero to Digital Hero</p>
+  <p><a href="#home">Home</a> | <a href="#courses">Courses</a> | <a href="#">Privacy</a></p>
+</footer>
+
+<script>
+  const text = "From Zero to Digital Hero";
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("typewriter").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 80);
+    } else {
+      let cursor = document.createElement("span");
+      cursor.className = "cursor";
+      cursor.innerHTML = "|";
+      document.getElementById("typewriter").appendChild(cursor);
+    }
+  }
+  window.onload = () => {
+    typeWriter();
+    startCounters();
+    observeScroll();
+  };
+
+  function startCounters() {
+    const counters = [
+      { el: "stat1", target: 586 },
+      { el: "stat2", target: 14 },
+      { el: "stat3", target: 312 }
+    ];
+    counters.forEach(c => {
+      let current = 0;
+      const increment = c.target / 70;
+      const update = setInterval(() => {
+        current += increment;
+        if (current >= c.target) {
+          document.getElementById(c.el).innerText = c.target;
+          clearInterval(update);
+        } else {
+          document.getElementById(c.el).innerText = Math.floor(current);
+        }
+      }, 20);
+    });
+  }
+
+  function observeScroll() {
+    const elements = document.querySelectorAll('.scroll-hidden');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scroll-visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    elements.forEach(el => observer.observe(el));
+  }
+</script>
+</body>
+</html>
